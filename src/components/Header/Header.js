@@ -10,15 +10,15 @@ const Header = () => {
              <div className="header-right">
                  <Link to="/">
                      <p className={`${activeTab === "Home" ? "active" : ""}`} onClick={() => setActivetab("Home")}><b>Home</b></p>
-                     <p className=""></p>
+                     
                  </Link>
                  <Link to="/add">
                      <p className={`${activeTab === "AddUser" ? "active" : ""}`} onClick={() => setActivetab("AddUser")}><b>Add-user</b></p>
-                     <p className=""></p>
+                    
                  </Link>
                  <Link to="/about">
                      <p className={`${activeTab === "About" ? "active" : ""}`} onClick={() => setActivetab("About")}><b>About</b></p>
-                     <p className=""></p>
+                    
                  </Link>
              </div>
         </div>
