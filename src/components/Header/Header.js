@@ -27,6 +27,9 @@ const Header = () => {
                  <Link to='/about'>
                      <p className={`${activeTab === "About" ? "active" : ""}`} onClick={() => setActiveTab("About")}><b>About</b></p>
                  </Link>
+                 <Link to=''>
+                     <p className={`${activeTab === "Contact" ? "active" : ""}`} onClick={() => setActiveTab("Contact")}><b>Contact us</b></p>
+                 </Link>
              </div>
         </nav>
     )
