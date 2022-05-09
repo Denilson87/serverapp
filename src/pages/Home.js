@@ -14,9 +14,10 @@ const Home = () => {
     const response = await axios.get("http://localhost:8080/server/list");
         if(response.status === 200){
             setData(response.data);
-        }        
+        }    
+        console.log("data=>", data);    
     };
-    console.log("data=>", data);
+  
     return (
         <div>Home Page</div>
         // <div style={{marginTop:"150px"}}>
