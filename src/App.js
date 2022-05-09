@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Routes} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,19 +11,19 @@ import Header from './components/Header/Header'
 
 function App() {
   return (
-    <BrowserRouter>
+ <>
    <Header/>
     <div className="App">
       <ToastContainer/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route  path="/add" component={AddEdit}/>
-        <Route  path="/update/:id" component={AddEdit}/>
-        <Route  path="/view" component={View}/>
-        <Route  path="/about" component={About}/>
-      </Switch>
+      <Routes>
+        <Route  exact path="/" element={<Home/>}/>
+        <Route  path="/add" element={<AddEdit/>}/>
+        <Route  path="/update/:id" element={<AddEdit/>}/>
+        <Route  path="/view" element={<View/>}/>
+        <Route  path="/about" element={<About/>}/>
+      </Routes>
     </div>
-    </BrowserRouter>
+    </>
   );
 }
 
