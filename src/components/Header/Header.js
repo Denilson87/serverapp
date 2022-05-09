@@ -4,21 +4,31 @@ import './Header.css';
 
 const Header = () => {
     const [activeTab, setActiveTab] = useState("Home");
+    const location = useLocation();
+    useEffect(() => {
+      if(location.pathname === "/"){
+          setActiveTab("Home")
+      } else if(location.pathname === "/add"){
+          setActiveTab("AddUser")
+      }else if (location.pathname === "/about"){
+          setActiveTab("About")
+      }
+    },[Location])
     return (
-        <div className="header">
-             <p className="logo">Server Management</p>
+        <nav className="header">
+             <p className="logo">Logo</p>
              <div className="header-right">
-                 <Link to="/">
+                 <Link to='/'>
                      <p className={`${activeTab === "Home" ? "active" : ""}`} onClick={() => setActiveTab("Home")}><b>Home</b></p>                     
                  </Link>
-                 <Link to="/add">
+                 <Link to='/add'>
                      <p className={`${activeTab === "AddUser" ? "active" : ""}`} onClick={() => setActiveTab("AddUser")}><b>AddUser</b></p>
-                    </Link>
-                 <Link to="/about">
+                 </Link>
+                 <Link to='/about'>
                      <p className={`${activeTab === "About" ? "active" : ""}`} onClick={() => setActiveTab("About")}><b>About</b></p>
                  </Link>
              </div>
-        </div>
+        </nav>
     )
 }
 

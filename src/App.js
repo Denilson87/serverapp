@@ -7,13 +7,13 @@ import Home from './pages/Home';
 import AddEdit from './pages/AddEdit';
 import View from './pages/View';
 import About from './pages/About';
-import Header from "./components/Header/Header";
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <BrowserRouter>
+   <Header/>
     <div className="App">
-      <Header/>
       <ToastContainer/>
       <Switch>
         <Route exact path="/" component={Home}/>
