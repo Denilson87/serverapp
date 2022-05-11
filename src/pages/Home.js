@@ -11,7 +11,7 @@ const Home = () => {
     },[])
 
     const getServers = async () => {
-    const response = await axios.get("http://localhost:8080/server/list");
+    const response = await axios.get("http://localhost:8080/");
         if(response.status === 200){
             setData(response.data);
         }    
@@ -24,30 +24,59 @@ const Home = () => {
                 <thead>
                     <tr>
                         <th style={{textAlign: "center"}}>
-                            ID                         
+                        ID                        
                         </th>
                         <th style={{textAlign: "center"}}>
-                            IP Address                        
+                        Nome                        
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Name                        
+                        Apelido                         
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Status                         
+                         Telefone                                                    
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Type                         
+                            Foto                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>                                                 
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Action                         
+                            Actions                         
+                        </th>
+                        <th style={{textAlign: "center"}}>                                                     
                         </th>
                     </tr>
                 </thead>
-               
+                <tbody>
+                   {data && 
+                      data.map((item, index) => {
+                        return (
+                          <tr key={index}>
+                             <th scope="row">{index + 1 }</th>
+                              <td>{item.nome}</td>
+                              <td>{item.apelido}</td> 
+                              <td>{item.telefone}</td>
+                              <td><img src={item.imageUrl} width={25} height={25} alt="image" /></td>
+                              <td><Link to={`/update/${item._id}`}>
+                                  <button className="btn btn-edit">Edit</button>
+                                  </Link>
+                             </td>
+                             <td><Link to={`/delete/${item._id}`}>
+                                  <button className="btn btn-delete">Delete</button>
+                                  </Link>
+                             </td>  
+                             <td><Link to={`/view/${item._id}`}>
+                                  <button className="btn btn-view">View</button>
+                                  </Link>
+                             </td>                            
+                          </tr>
+                        );
+                    })}
+                 </tbody>
             </table>
         </div>
         
-    );    
-};
+    );
+}
 
-export default Home;
+export default Home
