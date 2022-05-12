@@ -21,6 +21,8 @@ const [nome, apelido, telefone, imageUrl] = initialState;
             <input type="text" id="nome" name="nome" placeholder="Digite o nome..." onChange={handleInputChange} value={nome}/>
             <label htmlFor="nome">Apelido</label>
             <input type="text" id="apelido" name="apelido" placeholder="Digite o apelido..." onChange={handleInputChange} value={apelido}/>
+            <label htmlFor="nome">Telefone</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." onChange={handleInputChange} value={apelido}/>
             </form>
              
         </div>
