@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./AddEdit.css";
+import { toast } from 'react-toastify';
 
 const initialState = {
     nome:"",
@@ -19,6 +20,7 @@ const {nome, apelido, telefone, imageUrl} = initialState;
 const addContact = async (data) => {
     const response = await axios.post("http://localhost:8080/", data);
     if( response.status ===200 ){
+        toast.success(response.data);
 
     }
 }
