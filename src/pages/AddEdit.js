@@ -15,6 +15,11 @@ const AddEdit = () => {
 const [state, setState] = useState(initialState);
 
 const {nome, apelido, telefone, imageUrl} = initialState;
+
+const addContact = async (data) => {
+    const response = await axios.get("http://localhost:8080/");
+}
+
 const handleSubmit = (e) => {
     e.preventDefault();
     addContact(state);
