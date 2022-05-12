@@ -23,6 +23,8 @@ const [nome, apelido, telefone, imageUrl] = initialState;
             <input type="text" id="apelido" name="apelido" placeholder="Digite o apelido..." onChange={handleInputChange} value={apelido}/>
             <label htmlFor="nome">Telefone</label>
             <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." onChange={handleInputChange} value={telefone}/>
+            <label htmlFor="nome">Link da Imagem</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Coloque o link da imagem..." onChange={handleInputChange} value={imageUrl}/>
             </form>
              
         </div>
