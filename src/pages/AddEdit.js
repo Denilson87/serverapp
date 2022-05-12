@@ -23,12 +23,12 @@ const addContact = async (data) => {
     }
 }
 const handleSubmit = (e) => {
-    e.preventDefault();
-    addContact(state);
+    e.preventDefault();   
     if(!nome || !apelido || !telefone || !imageUrl){
         toast.error("Todos campos sao obrigatorios!")
 
     }
+    addContact(state);
     history.push("/");
 }
 const handleInputChange = (e) => {
