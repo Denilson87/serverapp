@@ -26,7 +26,7 @@ const addContact = async (data) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     addContact(state);
-    history.push
+    history.push();
 }
 const handleInputChange = (e) => {
   let {name, value} = e.target;
