@@ -17,20 +17,20 @@ const [state, setState] = useState(initialState);
 const {nome, apelido, telefone, imageUrl} = initialState;
 const history = useHistory();
 const addContact = async (data) => {
-    const response = await axios.post("http://localhost:8080/", data);
+const response = await axios.post("http://localhost:8080/", data);
     if( response.status ===200 ){
         toast.success(response.data);
     }
-}
+};
 const handleSubmit = (e) => {
     e.preventDefault();   
     if(!nome || !apelido || !telefone || !imageUrl){
         toast.error("Todos campos sao obrigatorios!")
 
-    }
+    };
     addContact(state);
     history.push("/");
-}
+};
 const handleInputChange = (e) => {
   let {name, value} = e.target;
   setState({...state, [name]: value });
