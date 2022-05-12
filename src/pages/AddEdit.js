@@ -17,6 +17,9 @@ const [nome, apelido, telefone, imageUrl] = initialState;
 const handleSubmit= (e) =>{
     e.preventDefault();
 }
+const handleInputChange = (e) => {
+  let {name, value} = e.target;
+}
     return (
         <div style={{marginTop: "100px"}}>
             <form style={{margin:"auto", padding: "15px", maxWidth:"400px", alignContent:"center"}}  onSubmit={handleSubmit}>
