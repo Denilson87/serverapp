@@ -17,7 +17,10 @@ const [state, setState] = useState(initialState);
 const {nome, apelido, telefone, imageUrl} = initialState;
 
 const addContact = async (data) => {
-    const response = await axios.get("http://localhost:8080/");
+    const response = await axios.post("http://localhost:8080/", data);
+    if( response.status ===200 ){
+
+    }
 }
 
 const handleSubmit = (e) => {
