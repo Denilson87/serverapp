@@ -4,18 +4,18 @@ import axios from "axios";
 import "./AddEdit.css";
 import { toast } from 'react-toastify';
 
-const initialState = {
+const State = {
     nome:"",
     apelido:"",
     telefone:"",
-    imageUrl:"",
+    imageUrl:""
 };
 
 const AddEdit = () => {
 
-const [state, setState] = useState(initialState);
-const {nome, apelido, telefone, imageUrl} = initialState;
-const history = useHistory();
+const [state, setState] = useState(State);
+const {nome, apelido, telefone, imageUrl} = State;
+//const history = useHistory();
 const addContact = async (data) => {
 const response = await axios.post("http://localhost:8080/", data);
     if( response.status === 200 ){
@@ -25,16 +25,15 @@ const response = await axios.post("http://localhost:8080/", data);
 const handleSubmit = (e) => {
     e.preventDefault();   
     if(!nome || !apelido || !telefone || !imageUrl){
-        toast.error("Todos campos sao obrigatorios!");
+        toast.warning("Todos campos sao obrigatorios !");
     }else{
         addContact(state);
-        history.push("/");
-   }
-    
+       // history.push("/");
+   }    
 };
 const handleInputChange = (e) => {
   let {name, value} = e.target;
-  setState({...state, [name]: value });
+  setState({ ...state, [name]: value });
 };
     return (      
         <div style={{marginTop: "100px"}}>
