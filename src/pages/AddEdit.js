@@ -14,6 +14,7 @@ const initialState = {
 const AddEdit = () => {
 const [state, setState] = useState(initialState);
 const [nome, apelido, telefone, imageUrl] = initialState;
+const handleSubmit;
     return (
         <div style={{marginTop: "100px"}}>
             <form style={{margin:"auto", padding: "15px", maxWidth:"400px", alignContent:"center"}}  onSubmit={handleSubmit}>
