@@ -17,7 +17,8 @@ const [nome, apelido, telefone, imageUrl] = initialState;
     return (
         <div style={{marginTop: "100px"}}>
             <form style={{margin:"auto", padding: "15px", maxWidth:"400px", alignContent:"center"}}>
-
+            <label htmlFor="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome..." />
             </form>
              
         </div>
