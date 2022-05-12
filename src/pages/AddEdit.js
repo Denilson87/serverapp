@@ -15,8 +15,11 @@ const AddEdit = () => {
 const [state, setState] = useState(initialState);
 const [nome, apelido, telefone, imageUrl] = initialState;
     return (
-        <div>
-             <h2>This page is Edit and update !</h2>
+        <div style={{marginTop: "100px"}}>
+            <form style={{margin:"auto", padding: "15px", maxWidth:"400px", alignContent:"center"}}>
+
+            </form>
+             
         </div>
     )
 }
