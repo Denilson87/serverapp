@@ -14,9 +14,8 @@ const initialState = {
 const AddEdit = () => {
 
 const [state, setState] = useState(initialState);
-
 const {nome, apelido, telefone, imageUrl} = initialState;
-
+const history = useHistory();
 const addContact = async (data) => {
     const response = await axios.post("http://localhost:8080/", data);
     if( response.status ===200 ){
@@ -24,10 +23,10 @@ const addContact = async (data) => {
 
     }
 }
-
 const handleSubmit = (e) => {
     e.preventDefault();
     addContact(state);
+    history.push
 }
 const handleInputChange = (e) => {
   let {name, value} = e.target;
