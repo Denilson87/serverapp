@@ -17,6 +17,7 @@ const [state, setState] = useState(initialState);
 const {nome, apelido, telefone, imageUrl} = initialState;
 const handleSubmit = (e) => {
     e.preventDefault();
+    addContact(state);
 }
 const handleInputChange = (e) => {
   let {name, value} = e.target;
