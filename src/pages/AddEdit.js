@@ -19,7 +19,7 @@ const handleSubmit= (e) =>{
 }
 const handleInputChange = (e) => {
   let {name, value} = e.target;
-  setState({...state, [nome]: value})
+  setState({...state, [nome]: value });
 }
     return (
         <div style={{marginTop: "100px"}}>
