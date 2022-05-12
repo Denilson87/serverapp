@@ -1,4 +1,4 @@
-import React, { useState, useEFfect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./AddEdit.css";
@@ -11,8 +11,10 @@ const initialState = {
 };
 
 const AddEdit = () => {
+
 const [state, setState] = useState(initialState);
-const [nome, apelido, telefone, imageUrl] = initialState;
+
+const {nome, apelido, telefone, imageUrl} = initialState;
 const handleSubmit = (e) => {
     e.preventDefault();
 }
@@ -20,9 +22,9 @@ const handleInputChange = (e) => {
   let {name, value} = e.target;
   setState({...state, [name]: value });
 };
-    return (
+    return (      
         <div style={{marginTop: "100px"}}>
-            <form  style={{margin:"auto", padding: "15px", maxWidth:"400px", alignContent:"center",}}  onSubmit={handleSubmit}>
+            <form  style={{margin:"auto", padding: "15px", maxWidth:"800px", alignContent:"center",}}  onSubmit={handleSubmit}>
             <label htmlFor="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Digite o nome..." onChange={handleInputChange} value={nome}/>
             <label htmlFor="apelido">Apelido</label>
@@ -31,9 +33,10 @@ const handleInputChange = (e) => {
             <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." onChange={handleInputChange} value={telefone}/>
             <label htmlFor="imageUrl">Link da Imagem</label>
             <input type="text" id="imageUrl" name="imageUrl" placeholder="Coloque o link da imagem..." onChange={handleInputChange} value={imageUrl}/>
+            <input type="submit" value="add"/>
             </form>             
         </div>
     );
 }
 
-export default AddEdit
+export default AddEdit;
