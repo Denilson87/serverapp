@@ -33,15 +33,15 @@ const Home = () => {
                         Apelido                         
                         </th>
                         <th style={{textAlign: "center"}}>
-                         Telefone                                                    
+                        Telefone                                                    
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Foto                                                 
+                        Foto                                                 
                         </th>
                         <th style={{textAlign: "center"}}>                                                 
                         </th>
                         <th style={{textAlign: "center"}}>
-                            Actions                         
+                        Actions                         
                         </th>
                         <th style={{textAlign: "center"}}>                                                     
                         </th>
@@ -56,7 +56,7 @@ const Home = () => {
                               <td>{item.nome}</td>
                               <td>{item.apelido}</td> 
                               <td>{item.telefone}</td>
-                              <td><img src={item.imageUrl} width={30} height={30} alt="image" /></td>
+                              <td><img src={item.imageUrl} width={30} height={30} alt="" /></td>
                               <td><Link to={`/update/${item._id}`}>
                                   <button className="btn btn-edit">Edit</button>
                                   </Link>
