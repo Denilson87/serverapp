@@ -25,11 +25,12 @@ const response = await axios.post("http://localhost:8080/", data);
 const handleSubmit = (e) => {
     e.preventDefault();   
     if(!nome || !apelido || !telefone || !imageUrl){
-        toast.error("Todos campos sao obrigatorios!")
-
-    };
-    addContact(state);
-    history.push("/");
+        toast.error("Todos campos sao obrigatorios!");
+    }else{
+        addContact(state);
+        history.push("/");
+   }
+    
 };
 const handleInputChange = (e) => {
   let {name, value} = e.target;
