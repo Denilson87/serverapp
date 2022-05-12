@@ -20,12 +20,15 @@ const addContact = async (data) => {
     const response = await axios.post("http://localhost:8080/", data);
     if( response.status ===200 ){
         toast.success(response.data);
-
     }
 }
 const handleSubmit = (e) => {
     e.preventDefault();
     addContact(state);
+    if(!nome || !apelido || !telefone || !imageUrl){
+        toast.error("Todos campos sao obrigatorios!")
+
+    }
     history.push("/");
 }
 const handleInputChange = (e) => {
