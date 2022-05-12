@@ -33,7 +33,7 @@ const handleInputChange = (e) => {
             <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." onChange={handleInputChange} value={telefone}/>
             <label htmlFor="imageUrl">Link da Imagem</label>
             <input type="text" id="imageUrl" name="imageUrl" placeholder="Coloque o link da imagem..." onChange={handleInputChange} value={imageUrl}/>
-            <input type="submit" value="add"/>
+            <input type="submit" value="Add"/>
             </form>             
         </div>
     );
