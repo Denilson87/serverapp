@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./AddEdit.css";
 import { toast } from 'react-toastify';
@@ -12,10 +12,10 @@ const initialState = {
 };
 
 const AddEdit = () => {
-
+const navigate = useNavigate();
 const [state, setState] = useState(initialState);
 const {nome, apelido, telefone, imageUrl} = initialState;
-//const history = useHistory();
+
 const addContact = async (data) => {
 const response = await axios.post("http://localhost:8080/", data);
     if( response.status === 200 ){
@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
         toast.warning("Todos campos sao obrigatorios !");
     }else{
         addContact(state);
-       // history.push("/");
+        navigate.push("/");
    }    
 };
 const handleInputChange = (e) => {
