@@ -13,8 +13,8 @@ const Home = () => {
     const getServers = async () => {
     const response = await axios.get("http://localhost:8080/parking-spot");
         if(response.status === 200){
-            // setData(response.data);
-            setData(response.data && response.data.content ? response.data.content : response.data);
+             //setData(response.data.content);
+             setData(response.data && response.data.content ? response.data.content : response.data);
         }    
            
     };
@@ -28,16 +28,31 @@ const Home = () => {
                         ID                        
                         </th>
                         <th style={{textAlign: "center"}}>
-                        Nome                        
+                        ParkingSpot N                       
                         </th>
                         <th style={{textAlign: "center"}}>
-                        Apelido                         
+                        License car                         
                         </th>
                         <th style={{textAlign: "center"}}>
-                        Telefone                                                    
+                        Brand car                                                    
                         </th>
                         <th style={{textAlign: "center"}}>
-                        Foto                                                 
+                        Model car                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>
+                        Car color                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>
+                        Registration date                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>
+                        Responsible name                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>
+                        Apartment                                                 
+                        </th>
+                        <th style={{textAlign: "center"}}>
+                        Block                                                 
                         </th>
                         <th style={{textAlign: "center"}}>                                                 
                         </th>
@@ -53,23 +68,29 @@ const Home = () => {
                       data.map((item, index) => {
                         return (
                           <tr key={index}>
-                             <th scope="row">{index + 1 }</th>
+                             <th scope="row">{index + 1 }</th>                             
                               <td>{item.parkingSpotNumber}</td>
                               <td>{item.licensePlateCar}</td> 
+                              <td>{item.brandCar}</td>
+                              <td>{item.modelCar}</td>
+                              <td>{item.colorCar}</td>
                               <td>{item.registrationDate}</td>
-                              {/* <td><img src={item.imageUrl} width={30} height={30} alt="" /></td>
-                              <td><Link to={`/update/${item._id}`}>
+                              <td>{item.responsibleName}</td>
+                              <td>{item.apartment}</td>
+                              <td>{item.block}</td>
+                              {/* <td><img src={item.imageUrl} width={30} height={30} alt="" /></td> */}
+                              <td><Link to={`/update/${item.id}`}>
                                   <button className="btn btn-edit">Edit</button>
                                   </Link>
                              </td>
-                             <td><Link to={`/delete/${item._id}`}>
+                             <td><Link to={`/delete/${item.id}`}>
                                   <button className="btn btn-delete">Delete</button>
                                   </Link>
                              </td>  
-                             <td><Link to={`/view/${item._id}`}>
+                             <td><Link to={`/view/${item.id}`}>
                                   <button className="btn btn-view">View</button>
                                   </Link>
-                             </td>                             */}
+                             </td>                            
                           </tr>
                         );
                     })}
