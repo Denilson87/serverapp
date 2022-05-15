@@ -11,9 +11,10 @@ const Home = () => {
     },[])
 
     const getServers = async () => {
-    const response = await axios.get("http://localhost:8080/");
+    const response = await axios.get("http://localhost:8080/parking-spot");
         if(response.status === 200){
-            setData(response.data);
+            // setData(response.data);
+            setData(response.data && response.data.content ? response.data.content : response.data);
         }    
            
     };
@@ -53,10 +54,10 @@ const Home = () => {
                         return (
                           <tr key={index}>
                              <th scope="row">{index + 1 }</th>
-                              <td>{item.nome}</td>
-                              <td>{item.apelido}</td> 
-                              <td>{item.telefone}</td>
-                              <td><img src={item.imageUrl} width={30} height={30} alt="" /></td>
+                              <td>{item.parkingSpotNumber}</td>
+                              <td>{item.licensePlateCar}</td> 
+                              <td>{item.registrationDate}</td>
+                              {/* <td><img src={item.imageUrl} width={30} height={30} alt="" /></td>
                               <td><Link to={`/update/${item._id}`}>
                                   <button className="btn btn-edit">Edit</button>
                                   </Link>
@@ -68,7 +69,7 @@ const Home = () => {
                              <td><Link to={`/view/${item._id}`}>
                                   <button className="btn btn-view">View</button>
                                   </Link>
-                             </td>                            
+                             </td>                             */}
                           </tr>
                         );
                     })}

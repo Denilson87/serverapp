@@ -31,21 +31,22 @@ const handleSubmit = (e) => {
         navigate.push("/");
    }    
 };
-const handleInputChange = (e) => {
-  let {name, value} = e.target;
+const handleInputChange = (event) => {
+  const {name, value} = event.target;
   setState({ ...state, [name]: value });
 };
+
     return (      
         <div style={{marginTop: "100px"}}>
             <form  style={{margin:"auto", padding: "15px", maxWidth:"800px", alignContent:"center",}}  onSubmit={handleSubmit}>
             <label htmlFor="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite o nome..." />
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome..." value={nome}  onChange={handleInputChange} />
             <label htmlFor="apelido">Apelido</label>
-            <input type="text" id="apelido" name="apelido" placeholder="Digite o apelido..." />
+            <input type="text" id="apelido" name="apelido" placeholder="Digite o apelido..." value={apelido}  onChange={handleInputChange} />
             <label htmlFor="telefone">Telefone</label>
-            <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." />
+            <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone..." value={telefone}  onChange={handleInputChange}/>
             <label htmlFor="imageUrl">Link da Imagem</label>
-            <input type="text" id="imageUrl" name="imageUrl" placeholder="Coloque o link da imagem..." />
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Coloque o link da imagem..." value={imageUrl}  onChange={handleInputChange} />
             <input type="submit" value="Adicionar"/>
             </form>             
         </div>
