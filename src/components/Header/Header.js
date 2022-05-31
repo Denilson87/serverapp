@@ -14,6 +14,7 @@ const Header = () => {
           setActiveTab("About")
       }
     },[Location])
+    
     return (
         <nav className="header">
              <p className="logo">Logo</p>
